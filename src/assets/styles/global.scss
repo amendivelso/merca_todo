@@ -1,7 +1,12 @@
-$base-color: #c6538c;
-$color: rgba(black, 0.88);
 
-body {
-  background-color: $base-color;
-  color: $color;
+
+$base-color: #fff;
+$color: #000;
+
+
+/*Reset*/
+* {
+  margin: 0;
+  padding: 0;
 }
+

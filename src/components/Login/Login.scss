@@ -1,0 +1,26 @@
+$font-main: 'Red Rose', cursive;
+$login-text: #A5A4A4;
+$login-btn: #48D1C3;
+$line-text: #DBD6D6;
+$bg-input: transparent;
+$size-fontinput: 18px;
+
+body {
+    font-family: $font-main;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.txt-field input {
+    background-color: $bg-input;
+    border: 0;
+    border-bottom: 1px solid $line-text;
+    display: block;
+    width: 230px;
+    padding: 13px;
+    font-size: $size-fontinput;
+    color: $login-text;
+}
+// .txt-field label {
+//     position: absolute;
+// }
