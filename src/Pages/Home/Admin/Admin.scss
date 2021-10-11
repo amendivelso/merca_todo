@@ -1,0 +1,13 @@
+$add-btn: #41a58d;
+$size-btn: 15px;
+
+button {
+    margin-left: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+button#btn-add {
+    width: 110px;
+    background-color: $add-btn;
+    font-size: $size-btn;
+}
