@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../../../components/Navbar/Navbar";
+import Header from "../../../components/Header/Header";
+import Search from "../../../components/Search/Search";
 import TableData from "../../../components/Table/Table";
 import './Admin.scss';
 
@@ -7,10 +8,10 @@ const Admin = () => {
     return (
         <div>
             <div>
-                <Navbar />
+                <Header />
             </div>
             <div>
-                <p>Soy un buscador</p>
+                <Search />
             </div>
             <div className="btn-add">
                 <button id="btn-add">Agregar</button>
