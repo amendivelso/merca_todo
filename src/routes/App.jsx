@@ -10,7 +10,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route extact path="/" component={TableData} />
+                <Route extact path="/" component={Login} />
             </Switch>
         </BrowserRouter>
     );
