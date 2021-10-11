@@ -1,6 +1,6 @@
-import React from "react";
-import Logo from "../../assets/images/MercaTodoLogo.png";
-import "./Login.scss";
+import React from 'react';
+import Logo from '../../assets/images/MercaTodoLogo.png';
+import './Login.scss';
 
 const Login = () => {
     //event prevet page reload
