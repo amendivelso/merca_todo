@@ -4,6 +4,7 @@ import Login from "../components/Login/Login";
 import Admin from "../Pages/Home/Admin/Admin";
 import Add from "../Pages/Form/Add";
 import Edit from "../Pages/Form/Edit";
+import User from "../Pages/Home/User/User";
 
 
 
@@ -14,8 +15,10 @@ const App = () => {
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/Admin" component={Admin} />
+                <Route exact path="/User" component={User} />
                 <Route exact path="/Add" component={Add} />
                 <Route exact path="/Edit" component={Edit} />
+
             </Switch>
         </BrowserRouter>
     );

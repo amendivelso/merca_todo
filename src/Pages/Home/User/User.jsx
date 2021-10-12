@@ -1,9 +1,17 @@
-import React from 'react';
+import React from "react";
 
 const User = () => {
     return (
         <div>
-            <button></button>
+            <div>
+                <Header />
+            </div>
+            <div>
+                <Search />
+            </div>
+            <div>
+                <TableData />
+            </div>
         </div>
     );
 };
