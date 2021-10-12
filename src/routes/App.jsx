@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "../components/Login/Login";
-import TableData from "../components/Table/Table";
 import Admin from "../Pages/Home/Admin/Admin";
+import Add from "../Pages/Form/Add";
 
 
 
@@ -11,7 +11,9 @@ const App = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route extact path="/" component={Admin} />
+                <Route exact path="/" component={Login} />
+                <Route exact path="/Admin" component={Admin} />
+                <Route exact path="/Add" component={Add} />
             </Switch>
         </BrowserRouter>
     );
