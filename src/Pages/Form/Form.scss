@@ -29,15 +29,9 @@ form .form-label {
     color: #fff;
 }
 
-button {
+button#add-color {
     margin-top: 25px;
     margin-left: 58%;
     width: 110px;
     background: $color-btnadd;
-}
-
-@media only screen and (max-width: $xs-screen-size) {
-    button {
-        margin-left: 66%;
-    }
 }

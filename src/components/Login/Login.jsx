@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from '../../assets/images/MercaTodoLogo.png';
-import './Login.scss';
+import React from "react";
+import Logo from "../../assets/images/LogoMobile.jpg";
+import "./Login.scss";
 
 const Login = () => {
     //event prevet page reload
@@ -12,7 +12,9 @@ const Login = () => {
             <div className="container">
                 <div className="header-logo">
                     <img src={Logo} alt="LogoMercaTodo" className="Logo" />
-                    <p className="Calidad">Calidad y confianza</p>
+                </div>
+                <div className="calidad-div">
+                    <p className="calidad">Calidad y confianza</p>
                 </div>
                 <div className="app-wrapper">
                     <form method="post" className="form-wrapper">

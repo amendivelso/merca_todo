@@ -10,7 +10,7 @@ $text-btncolor: #fff;
 body {
     font-family: $font-main;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .app-wrapper {
@@ -59,12 +59,16 @@ button {
 }
 
 img {
-    width: 175px;
+    width: 415px;
+    height: 200px;
 }
 .header-logo {
-    position: absolute;
-    left: 29%;
-    top: 3%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+p .calidad {
+
 }
 
 // .txt-field label {

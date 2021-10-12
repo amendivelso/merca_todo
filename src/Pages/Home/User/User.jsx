@@ -1,16 +1,14 @@
 import React from "react";
-import Header from "../../../components/Header/Header";
-import Search from "../../../components/Search/Search";
 import TableUser from "../../../components/TableUser/TableUser";
 
 const User = () => {
     return (
         <div>
             <div>
-                <Header />
+                <h1>Header</h1>
             </div>
             <div>
-                <Search />
+                <h1>Search</h1>
             </div>
             <div>
                 <TableUser />

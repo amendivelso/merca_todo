@@ -1,0 +1,11 @@
+button {
+  margin-left: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+button#btn-add {
+  width: 110px;
+  background-color: #41a58d;
+  font-size: 15px;
+}
