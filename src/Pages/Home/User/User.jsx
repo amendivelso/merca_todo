@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../../components/Header/Header";
 import Search from "../../../components/Search/Search";
-import TableData from "../../../components/Table/Table";
+import TableUser from "../../../components/TableUser/TableUser";
 
 const User = () => {
     return (
@@ -13,7 +13,7 @@ const User = () => {
                 <Search />
             </div>
             <div>
-                <TableData />
+                <TableUser />
             </div>
         </div>
     );
