@@ -6,7 +6,7 @@ import Add from "../Pages/Form/Add";
 import Edit from "../Pages/Form/Edit";
 import User from "../Pages/Home/User/User";
 import HeaderGeneral from "../components/headerGeneral/HeaderGeneral";
-import  {SearchBody}  from "../components/SearchBody/SearchBody";
+import { SearchBody } from "../components/SearchBody/SearchBody";
 
 
 
@@ -14,8 +14,8 @@ import  {SearchBody}  from "../components/SearchBody/SearchBody";
 const App = () => {
     return (
         <BrowserRouter>
-        <HeaderGeneral />
-        <SearchBody />
+
+
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/Admin" component={Admin} />
