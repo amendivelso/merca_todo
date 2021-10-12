@@ -1,0 +1,72 @@
+$font-main: 'Red Rose', cursive;
+$login-text: #A5A4A4;
+$login-btn: #48D1C3;
+$line-text: #DBD6D6;
+$bg-input: transparent;
+$size-fontinput: 18px;
+$size-forgot: 12px;
+$text-btncolor: #fff;
+
+body {
+    font-family: $font-main;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 0;
+}
+.forgot {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    font-size: $size-forgot;
+}
+.input {
+    background-color: $bg-input;
+    border: 0;
+    border-bottom: 1px solid $line-text;
+    display: block;
+    width: 230px;
+    padding: 13px 0;
+    font-size: $size-fontinput;
+    color: $login-text;
+}
+.label {
+    color: $login-text;
+    display: inline-block;
+    font-size: $size-fontinput;
+    min-width: 5px;
+}
+
+button {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: $login-btn;
+    padding: 15px;
+    font-family: $font-main;
+    font-size: $size-fontinput;
+    border: 0;
+    border-radius: 18px;
+    color: $text-btncolor;
+    box-shadow: inset 0px 4px 4px rgb(0, 0, 0, 0.25);
+}
+
+img {
+    width: 175px;
+}
+.header-logo {
+    position: absolute;
+    left: 29%;
+    top: 3%;
+}
+
+// .txt-field label {
+//     position: absolute;
+// }

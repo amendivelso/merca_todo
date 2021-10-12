@@ -1,0 +1,43 @@
+$color-btnadd: #41a58d;
+$bg-form: #48d1c3;
+$xs-screen-size: 575px;
+
+.form {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    border-radius: 18px;
+    background-color: $bg-form;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+}
+form .input-value {
+    border: none;
+    font-size: 18px;
+    border-radius: 20px;
+    color: #000;
+    width: 90%;
+    height: 30px;
+    margin: 0.8rem;
+}
+form .form-label {
+    text-align: justify;
+    font-size: 18px;
+    color: #fff;
+}
+
+button {
+    margin-top: 25px;
+    margin-left: 58%;
+    width: 110px;
+    background: $color-btnadd;
+}
+
+@media only screen and (max-width: $xs-screen-size) {
+    button {
+        margin-left: 66%;
+    }
+}
