@@ -45,10 +45,11 @@ module.exports = {
       },
       {
         test: /\.(png|gif|jpg)$/,
+        include: /images/,
         use: [
           {
             loader: 'file-loader',
-            options: { name: 'assets/[hash].[ext]' },
+            options: { name: 'assets/[hash].[ext]' }
           }
         ],
       }
