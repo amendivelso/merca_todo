@@ -16,10 +16,8 @@ const Add = () => {
                 <label className="form-label">Peso</label>
                 <input type="text" name="peso" className="input-value" value="" />
 
-
                 <label className="form-label">Proveedor</label>
                 <input type="text" name="proveedor" className="input-value" value="" />
-
 
                 <label className="form-label">Vencimiento</label>
                 <input type="text" name="vencimiento" className="input-value" value="" />
