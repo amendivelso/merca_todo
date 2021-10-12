@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ["regenerator-runtime/runtime.js", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -59,6 +59,6 @@ module.exports = {
     static: path.join(__dirname, 'dist'),
     compress: true,
     port: 3006,
-    historyApiFallback:true,
+    historyApiFallback: true,
   }
 }

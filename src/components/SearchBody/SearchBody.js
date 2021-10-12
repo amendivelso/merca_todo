@@ -8,7 +8,7 @@ export const SearchBody = () => {
             <div className="searchBar">
                 <select name="select" id='filter' >
                     <option value="value1" selected>Filtrar</option>
-                    <option value="value1" selected>Cárnicos</option>
+                    <option value="value1" >Cárnicos</option>
                     <option value="value2">Lácteos</option>
                     <option value="value3">Embutidos</option>
                     <option value="value1" >Licores</option>
