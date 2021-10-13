@@ -30,8 +30,14 @@ form .form-label {
 }
 
 button#add-color {
+
     margin-top: 25px;
     margin-left: 58%;
     width: 110px;
     background: $color-btnadd;
+    @media (min-width:800px) {
+        margin-top: 25px;
+        margin-left: 56%;
+        
+    }
 }

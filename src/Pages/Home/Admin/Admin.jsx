@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HeaderGeneral from '../../../components/headerGeneral/HeaderGeneral';
 import { SearchBody } from '../../../components/SearchBody/SearchBody';
 import TableData from "../../../components/Table/Table";
+import { Link } from 'react-router-dom';
 import './Admin.scss';
 import axios from 'axios';
 import 'regenerator-runtime/runtime';
@@ -32,7 +33,10 @@ const Admin = () => {
             <SearchBody />
             <br />
             <div className="btn-add">
-                <button id="btn-add">Agregar</button>
+                <Link to="Add">
+                    <button id="btn-add">Agregar</button>
+                </Link>
+
             </div>
             <div>
                 <TableData data={data} />

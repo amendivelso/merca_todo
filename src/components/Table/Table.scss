@@ -46,6 +46,7 @@ tr:not(:first-child):not(:last-child) th {
     .responsiveTable td,
     .responsiveTable tr {
         display: block;
+        width: 99%;
     }
     .responsiveTable thead tr {
         display: none;
@@ -87,3 +88,4 @@ tr:not(:first-child):not(:last-child) th {
     color: $color-icon;
     font-size: $size-icon;
 }
+

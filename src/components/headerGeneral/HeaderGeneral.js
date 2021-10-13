@@ -1,10 +1,11 @@
 import React from "react";
-import logo from '../../assets/images/MercaTodoLogo.jpg'
+import logo from '../../assets/images/MercaTodoLogo.jpg';
+import './headerGeneral.scss';
 
-const HeaderGeneral=()=>{
-    return(
+const HeaderGeneral = () => {
+    return (
         <div className="headerg">
-            <img src={logo} alt="Logo" />;
+            <img className="logo-main" src={logo} alt="Logo" />
         </div>
     )
 
