@@ -7,16 +7,10 @@ import { ApiContext } from '../../Context/ContextApi';
 
 const TableData = () => {
 
-    const { data } = useContext(ApiContext)
+    const { data, requestDelete } = useContext(ApiContext)
 
 
-    // const requestDelete = async (id) => {
-    //     await axios.delete(baseUrl + "/" + id)
-    //         .then(response => {
-    //             setData(response.data.filter(product => product.id !== id));
-    //         })
 
-    // }
 
 
 
@@ -55,8 +49,8 @@ const TableData = () => {
 
                         <Td>
                             <Link to="/Admin">
-                                <i className="fa fa-trash" id="delete"></i>
-                                {/* <i onClick={() => requestDelete(product.id)} className="fa fa-trash" id="delete"></i> */}
+
+                                <i onClick={() => requestDelete(product.id)} className="fa fa-trash" id="delete"></i>
                             </Link>
 
 

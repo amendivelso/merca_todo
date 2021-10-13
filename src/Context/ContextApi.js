@@ -6,7 +6,7 @@ const ApiContext = createContext();
 
 const ApiProvider = (props) => {
   const baseUrl = 'https://desolate-gorge-58133.herokuapp.com/api/products';
-  const { data, setData, requestPost, select, setSelect, setDataId, dataId, requestGetbyId, requestPUT } = useRequestData(baseUrl)
+  const { data, setData, requestPost, select, setSelect, setDataId, dataId, requestGetbyId, requestPUT, requestDelete } = useRequestData(baseUrl)
 
 
 
@@ -20,8 +20,8 @@ const ApiProvider = (props) => {
       setDataId,
       dataId,
       requestGetbyId,
-      requestPUT
-
+      requestPUT,
+      requestDelete
 
     }}>
 

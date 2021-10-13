@@ -77,7 +77,13 @@ function useRequestData(baseUrl) {
   }
 
 
+  const requestDelete = async (id) => {
+    await axios.delete(baseUrl + "/" + id)
+      .then(response => {
+        setData(response.data.filter(product => product.id !== id));
+      })
 
+  }
 
   useEffect(async () => {
     await requestGet();
@@ -95,7 +101,8 @@ function useRequestData(baseUrl) {
     dataId,
     setDataId,
     requestGetbyId,
-    requestPUT
+    requestPUT,
+    requestDelete
   }
 
 }
