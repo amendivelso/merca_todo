@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "../../assets/images/LogoMobile.jpg";
 import "./Login.scss";
-import axios from 'axios';
+import {ApiURL} from '../../services/apirest';
 
-//Init const URL and COOKIES
-const baseUrl="https://warm-garden-17574.herokuapp.com/api/employees/admin";
-// const cookies = new Cookies();
-
-class Login extends Component {
+class Login extends React.Component {
     state = {
         form: {
             username: "",
@@ -20,32 +16,16 @@ class Login extends Component {
         this.setState({
             form: {
                 ...this.state.form,
-                [event.target.name]: event.target.value
-            }
+                [event.target.name]: event.target.value,
+            },
         });
-        console.log(this.state.form);
+        // console.log(this.state.form);
     };
-
-    //Init Session
-    iniciarSesion=async()=>{
-        await axios.get(baseUrl, {params: {username: this.state.form.username, password: md5(this.state.form.password)}})
-        .then(response=>{
-            return response.data;
-        })
-        .then(response=>{
-            if(response.length>0){
-                var respuesta=response[0];
-                cookies.set('id', respuesta.id, {path: "/"});
-                cookies.set('nombre', respuesta.nombre, {path: "/"});
-                cookies.set('username', respuesta.username, {path: "/"});
-                alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido_paterno}`);
-                window.location.href="./Admin";
-            }else{
-                alert('El usuario o la contraseña no son correctos');
-            }
-        })
-        .catch(error=>{
-            console.log(error);
+    logSeccion = () => {
+        let url = ApiURL + "auth";
+        axios.post(url,this.state.form)
+        .then(response => {
+            console.log(response)
         })
 
     }
@@ -68,8 +48,7 @@ class Login extends Component {
                                     className="input"
                                     type="text"
                                     name="username"
-                                    onChange={this.handleChange}
-                                />
+                                    onChange={this.handleChange}/>
                             </div>
                             <div className="password">
                                 <label className="label">Contraseña</label>
@@ -77,13 +56,16 @@ class Login extends Component {
                                     className="input"
                                     type="password"
                                     name="password"
-                                    onChange={this.handleChange}
-                                />
+                                    onChange={this.handleChange}/>
                             </div>
                             <div className="forgot">
                                 Olvidaste tú contraseña?
                             </div>
-                            <button className="submit">LOGIN</button>
+                            <button
+                                className="btn-sub"
+                                onClick={this.logSeccion}>
+                                LOGIN
+                            </button>
                         </form>
                     </div>
                 </div>
