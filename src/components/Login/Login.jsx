@@ -13,9 +13,7 @@ const Login = () => {
                 <div className="header-logo">
                     <img src={Logo} alt="LogoMercaTodo" className="Logo" />
                 </div>
-                <div className="calidad-div">
-                    <p className="calidad">Calidad y confianza</p>
-                </div>
+                
                 <div className="app-wrapper">
                     <form method="post" className="form-wrapper">
                         <div className="user">

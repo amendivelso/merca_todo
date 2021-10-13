@@ -20,6 +20,7 @@ body {
     transform: translate(-50%, -50%);
     border: none;
     padding: 0;
+    margin-top: 100px;
 }
 .forgot {
     text-align: center;
@@ -59,13 +60,18 @@ button {
 }
 
 img {
-    width: 415px;
-    height: 200px;
+    width: auto;
+    height: auto;
 }
 .header-logo {
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.calidad-div
+{
+    position: absolute;
 }
 
 
