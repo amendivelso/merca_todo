@@ -1,38 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import './Table.scss';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-
-const TableData = ({ data }) => {
-    const baseUrl = "https://warm-garden-17574.herokuapp.com/api/products";
-
-    const [datad, setData] = useState([]);
-    const requestGet = async () => {
-        try {
-            await axios.get(baseUrl)
-                .then(response => {
-                    setData(response.data);
-                })
-        }
-        catch (err) {
-            console.log(err);
-        }
-
-    }
+import { ApiContext } from '../../Context/ContextApi';
 
 
-    const requestDelete = async (id) => {
-        await axios.delete(baseUrl + "/" + id)
-            .then(response => {
-                setData(response.data.filter(product => product.id !== id));
-            })
+const TableData = () => {
 
-    }
+    const { data } = useContext(ApiContext)
 
-    useEffect(async () => {
-        await requestGet();
-    }, [datad])
+
+    // const requestDelete = async (id) => {
+    //     await axios.delete(baseUrl + "/" + id)
+    //         .then(response => {
+    //             setData(response.data.filter(product => product.id !== id));
+    //         })
+
+    // }
+
+
 
     return (
         <Table>
@@ -69,7 +55,8 @@ const TableData = ({ data }) => {
 
                         <Td>
                             <Link to="/Admin">
-                                <i onClick={() => requestDelete(product.id)} className="fa fa-trash" id="delete"></i>
+                                <i className="fa fa-trash" id="delete"></i>
+                                {/* <i onClick={() => requestDelete(product.id)} className="fa fa-trash" id="delete"></i> */}
                             </Link>
 
 

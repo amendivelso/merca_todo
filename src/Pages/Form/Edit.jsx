@@ -1,71 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import HeaderGeneral from '../../components/headerGeneral/HeaderGeneral';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { ApiContext } from '../../Context/ContextApi';
 
 const Edit = () => {
-    const { id } = useParams('' || '');
 
+    const { id } = useParams();
+    const { setDataId, dataId, requestPUT, requestGetbyId, select, setSelect } = useContext(ApiContext)
 
-    const baseUrl = "https://warm-garden-17574.herokuapp.com/api/products/";
-
-    const baseUrlm = "https://warm-garden-17574.herokuapp.com/api/products";
-    const [data, setData] = useState([]);
-    const requestGet = async () => {
-        try {
-            await axios.get(baseUrlm)
-                .then(response => {
-                    setData(response.data);
-                })
-        }
-        catch (err) {
-            console.log(err);
-        }
-
-    }
     useEffect(async () => {
-        await requestGet();
-    }, [dataId])
-
-
-    const [dataId, setDataId] = useState([])
-
-    const requestGetbyId = async () => {
-        await axios.get(baseUrl + id)
-            .then(response => {
-                setDataId(response.data)
-            })
-    }
-    useEffect(async () => {
-        await requestGetbyId();
+        await requestGetbyId(id);
     }, [])
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setDataId({ ...dataId, [name]: value })
-        console.log(dataId);
+
     }
 
-
-    const requestPUT = async () => {
-        await axios.put(baseUrl + id, dataId)
-            .then(response => {
-                var newData = data;
-                newData.map(pupdate => {
-                    if (dataId.id === pupdate.id) {
-                        pupdate.product_name = dataId.product_name
-                        pupdate.provider = dataId.provider
-                        pupdate.existing_units = dataId.existing_units
-                        pupdate.date_entry = dataId.date_entry
-                        pupdate.description = dataId.description
-                        pupdate.category = dataId.category
-
-                    }
-                })
-                setData(newData)
-            })
-    }
 
 
     return (
@@ -98,7 +52,7 @@ const Edit = () => {
             </div>
             <div className="add-color">
                 <Link to="/Admin">
-                    <button id="add-color" onClick={requestPUT} >Editar</button>
+                    <button id="add-color" onClick={() => requestPUT(id)} >Editar</button>
 
                 </Link>
 

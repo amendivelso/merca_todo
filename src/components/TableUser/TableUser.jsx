@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import { ApiContext } from '../../Context/ContextApi';
 
 
 
-const TableUser = ({ data }) => {
+
+const TableUser = () => {
+    const { data } = useContext(ApiContext)
+
     return (
         <Table>
             <Thead>

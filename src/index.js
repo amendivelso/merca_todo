@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './routes/App';
-import './assets/styles/global.scss'
+import './assets/styles/global.scss';
+import { ApiProvider } from './Context/ContextApi';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+
+ReactDOM.render(
+
+  <ApiProvider>
+    <App />
+  </ApiProvider>
+  ,
+
+
+  document.getElementById('app'));

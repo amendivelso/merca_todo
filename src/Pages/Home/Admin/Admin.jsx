@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import HeaderGeneral from '../../../components/headerGeneral/HeaderGeneral';
 import { SearchBody } from '../../../components/SearchBody/SearchBody';
 import TableData from "../../../components/Table/Table";
@@ -6,32 +6,12 @@ import { Link } from 'react-router-dom';
 import './Admin.scss';
 import axios from 'axios';
 import 'regenerator-runtime/runtime';
-
-
-
-
+import { ApiContext } from '../../../Context/ContextApi';
 
 const Admin = () => {
-    const baseUrl = 'https://warm-garden-17574.herokuapp.com/api/products';
-
-    const [data, setData] = useState([]);
-    const requestGet = async () => {
-        try {
-            await axios.get(baseUrl)
-                .then(response => {
-                    setData(response.data);
-                })
-        }
-        catch (err) {
-            console.log(err);
-        }
-
-    }
-    useEffect(async () => {
-        await requestGet();
-    }, [])
 
 
+    const { data, setData } = useContext(ApiContext)
 
 
     return (
@@ -48,9 +28,6 @@ const Admin = () => {
             <div>
                 <TableData data={data} />
             </div>
-
-
-
 
         </div>
     );

@@ -1,39 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import HeaderGeneral from '../../components/headerGeneral/HeaderGeneral';
 import { Link } from 'react-router-dom'
 import './Form.scss';
 import axios from 'axios';
 import 'regenerator-runtime/runtime';
+import { ApiContext } from '../../Context/ContextApi';
 
 const Add = () => {
-
-    const baseUrl = 'https://warm-garden-17574.herokuapp.com/api/products';
-
-    const [data, setData] = useState([]);
-    const requestGet = async () => {
-        try {
-            await axios.get(baseUrl)
-                .then(response => {
-                    setData(response.data);
-                })
-        }
-        catch (err) {
-            console.log(err);
-        }
-
-    }
-
-
-    //Status for show data
-    const [select, setSelect] = useState({
-        product_name: '',
-        provider: '',
-        existing_units: '',
-        date_entry: '',
-        description: '',
-        category: '',
-
-    })
+    const { data, setData, select, setSelect, requestPost } = useContext(ApiContext)
     //sync typing with fields
     const handleChange = (e) => {
 
@@ -41,21 +15,6 @@ const Add = () => {
         setSelect({ ...select, [name]: value })
     }
 
-
-    //request POST
-    const resquestPost = async () => {
-        await axios.post(baseUrl, select)
-            .then(response => {
-                setData(data.concat(response.data))
-
-            }).catch(e => {
-                console.log(e);
-            })
-    }
-
-    useEffect(async () => {
-        await requestGet();
-    }, [data, select])
     return (
         <>
             <HeaderGeneral />
@@ -83,7 +42,7 @@ const Add = () => {
                 </form>
                 <div className="add-color">
                     <Link to="/Admin">
-                        <button onClick={resquestPost} id="add-color">Agregar</button>
+                        <button onClick={requestPost} id="add-color">Agregar</button>
                     </Link>
 
                 </div>
