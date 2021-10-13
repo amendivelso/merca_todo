@@ -7,6 +7,10 @@ import './Admin.scss';
 import axios from 'axios';
 import 'regenerator-runtime/runtime';
 
+
+
+
+
 const Admin = () => {
     const baseUrl = 'https://warm-garden-17574.herokuapp.com/api/products';
 
@@ -27,6 +31,9 @@ const Admin = () => {
         await requestGet();
     }, [])
 
+
+
+
     return (
         <div>
             <HeaderGeneral />
@@ -41,6 +48,10 @@ const Admin = () => {
             <div>
                 <TableData data={data} />
             </div>
+
+
+
+
         </div>
     );
 };
