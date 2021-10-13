@@ -10,9 +10,12 @@ const TableUser = ({ data }) => {
                 <Tr>
                     <Th>Id</Th>
                     <Th>Producto</Th>
+                    <Th>Cantidad</Th>
                     <Th>Proveedor</Th>
                     <Th>Vencimiento</Th>
                     <Th>Descripción</Th>
+                    <Th>Categoria</Th>
+
 
                 </Tr>
             </Thead>
@@ -22,9 +25,11 @@ const TableUser = ({ data }) => {
                     <Tr key={product.id}>
                         <Td>{product.id}</Td>
                         <Td>{product.product_name}</Td>
+                        <Td>{product.existing_units}</Td>
                         <Td>{product.provider}</Td>
                         <Td>{product.date_entry}</Td>
                         <Td>{product.description}</Td>
+                        <Td>{product.category}</Td>
 
                     </Tr>
                 ))

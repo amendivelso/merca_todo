@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HeaderGeneral from '../../components/headerGeneral/HeaderGeneral';
+import { Link } from 'react-router-dom'
 import './Form.scss';
 import axios from 'axios';
 import 'regenerator-runtime/runtime';
@@ -21,16 +22,16 @@ const Add = () => {
         }
 
     }
-    useEffect(async () => {
-        await requestGet();
-    }, [])
+
 
     //Status for show data
     const [select, setSelect] = useState({
         product_name: '',
         provider: '',
+        existing_units: '',
         date_entry: '',
         description: '',
+        category: '',
 
     })
     //sync typing with fields
@@ -51,6 +52,10 @@ const Add = () => {
                 console.log(e);
             })
     }
+
+    useEffect(async () => {
+        await requestGet();
+    }, [data, select])
     return (
         <>
             <HeaderGeneral />
@@ -63,15 +68,24 @@ const Add = () => {
                     <label className="form-label">Proveedor</label>
                     <input type="text" name="provider" className="input-value" onChange={handleChange} />
 
+                    <label className="form-label">Unidades</label>
+                    <input type="text" name="existing_units" className="input-value" onChange={handleChange} />
+
                     <label className="form-label">Vencimiento</label>
                     <input type="text" name="date_entry" className="input-value" onChange={handleChange} />
 
                     <label className="form-label">Descripción</label>
                     <input type="text" name="description" className="input-value" onChange={handleChange} />
 
+                    <label className="form-label">Categoria</label>
+                    <input type="text" name="category" className="input-value" onChange={handleChange} />
+
                 </form>
                 <div className="add-color">
-                    <button onClick={resquestPost} id="add-color">Agregar</button>
+                    <Link to="/Admin">
+                        <button onClick={resquestPost} id="add-color">Agregar</button>
+                    </Link>
+
                 </div>
             </div>
         </>
