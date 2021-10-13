@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "../../assets/images/LogoMobile.jpg";
 import "./Login.scss";
 import axios from 'axios';
-import md5 from 'md5';
 import  Cookies from 'universal-cookie';
 
 const baseUrl = "https://warm-garden-17574.herokuapp.com/api/employees";
@@ -53,7 +52,7 @@ class Login extends React.Component {
     //     });
     // };
      logSeccion = () => {
-         axios.get(baseUrl, {params: {username: this.state.username, password: md5(this.state.form.password)}})
+         axios.get(baseUrl, {params: {username: this.state.form.username, password: this.state.form.password }})
          .then(response => {
              return response.data;
          })
