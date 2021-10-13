@@ -1,15 +1,38 @@
-import React from "react";
+import React, {Component} from "react";
 import Logo from "../../assets/images/LogoMobile.jpg";
 import "./Login.scss";
+import axios from 'axios';
+import md5 from 'md5';
+import Cookies from 'universal-cookie';
 
-const Login = () => {
-    
 
+//Init const URL and COOKIES
+const baseUrl="https://warm-garden-17574.herokuapp.com/api/employees/admin";
+const cookies = new Cookies();
 
-    //event prevet page reload
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
+class Login extends Component {
+    state = {
+        form: {
+            username: '',
+            password: ''
+        }
     };
+
+    //Event catch change on input
+    handleChange = async e => {
+        await this.setState({
+            form:{
+                ...this.state.form, [e.target.name]: e.target.value
+            }
+        });
+    };
+    
+    //Init Session
+    iniciaSesion = async() => {
+
+    }
+
+    render(){
     return (
         <>
             <div className="container">
@@ -38,7 +61,7 @@ const Login = () => {
                             />
                         </div>
                         <div className="forgot">Olvidaste tú contraseña?</div>
-                        <button className="submit" onClick={handleFormSubmit}>
+                        <button className="submit">
                             LOGIN
                         </button>
                     </form>
@@ -46,6 +69,7 @@ const Login = () => {
             </div>
         </>
     );
+    }
 };
 
 export default Login;
