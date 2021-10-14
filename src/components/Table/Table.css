@@ -10,7 +10,7 @@ table {
 }
 
 td {
-  border: 1px solid #000;
+  border: 1px solid #48D1C3;
   padding: 0.75rem;
   text-align: center;
 }
@@ -20,7 +20,7 @@ th {
   text-align: center;
   white-space: nowrap;
   background: #48D1C3;
-  color: #000;
+  color: #286955;
 }
 
 .responsiveTable td .tdBefore {

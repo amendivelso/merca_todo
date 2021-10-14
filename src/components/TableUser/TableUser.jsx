@@ -6,7 +6,7 @@ import { ApiContext } from '../../Context/ContextApi';
 
 
 const TableUser = () => {
-    const { data } = useContext(ApiContext)
+    const { dataView } = useContext(ApiContext)
 
     return (
         <Table>
@@ -24,7 +24,7 @@ const TableUser = () => {
                 </Tr>
             </Thead>
             <Tbody>
-                {data.map((product) => (
+                {dataView.map((product) => (
 
                     <Tr key={product.id}>
                         <Td>{product.id}</Td>
