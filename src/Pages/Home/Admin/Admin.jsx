@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import HeaderGeneral from '../../../components/headerGeneral/HeaderGeneral';
 import { SearchBody } from '../../../components/SearchBody/SearchBody';
 import TableData from "../../../components/Table/Table";
@@ -12,6 +12,7 @@ const Admin = () => {
 
 
     const { data, setData } = useContext(ApiContext)
+
 
 
     return (

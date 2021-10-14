@@ -3,12 +3,14 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 function useRequestData(baseUrl) {
   const [data, setData] = useState([]);
+  const [dataView, setDataView] = useState([]);
   //GET
   const requestGet = async () => {
     try {
       await axios.get(baseUrl)
         .then(response => {
           setData(response.data);
+          setDataView(response.data);
         })
     }
     catch (err) {
@@ -87,7 +89,7 @@ function useRequestData(baseUrl) {
 
   useEffect(async () => {
     await requestGet();
-  }, [data, dataId])
+  }, [dataId])
 
 
 
@@ -102,7 +104,9 @@ function useRequestData(baseUrl) {
     setDataId,
     requestGetbyId,
     requestPUT,
-    requestDelete
+    requestDelete,
+    setDataView,
+    dataView
   }
 
 }

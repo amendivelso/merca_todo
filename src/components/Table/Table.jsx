@@ -7,12 +7,7 @@ import { ApiContext } from '../../Context/ContextApi';
 
 const TableData = () => {
 
-    const { data, requestDelete } = useContext(ApiContext)
-
-
-
-
-
+    const { dataView, requestDelete } = useContext(ApiContext)
 
     return (
         <Table>
@@ -30,7 +25,7 @@ const TableData = () => {
                 </Tr>
             </Thead>
             <Tbody>
-                {data.map((product) => (
+                {dataView.map((product) => (
 
                     <Tr key={product.id}>
                         <Td>{product.id}</Td>
